@@ -24,7 +24,6 @@ public class B1080 {
 
         for (int i = 0; i < N; i++) {
             String str = br.readLine().trim();
-            if (str.length() < M) throw new IllegalArgumentException("행 길이가 M보다 짧음");
             for (int j = 0; j < M; j++) {
                 A[i][j] = str.charAt(j) - '0';
             }
@@ -32,7 +31,7 @@ public class B1080 {
         int[][] B = new int[N][M];
         for (int i = 0; i < N; i++) {
             String str = br.readLine().trim();
-            if (str.length() < M) throw new IllegalArgumentException("행 길이가 M보다 짧음");
+
 
             for (int j = 0; j < M; j++) {
                 B[i][j] = str.charAt(j) - '0';
@@ -42,8 +41,8 @@ public class B1080 {
             System.out.println(Arrays.deepEquals(A, B) ? 0 : -1);
             return;
         }
-        for (int i = 0; i < N-3; i++) {
-            for (int j = 0; j < M-3; j++) {
+        for (int i = 0; i <= N-3; i++) {
+            for (int j = 0; j <= M-3; j++) {
 
                 if (A[i][j] != B[i][j]) {
                     flip3x3(A, i, j);
